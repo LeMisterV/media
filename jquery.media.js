@@ -100,6 +100,7 @@ $.fn.media.defaults = {
     attrs:         {},        // added to object and embed elements as attrs
     flvKeyName:    'file',    // key used for object src param (thanks to Andrea Ercolino)
     flashvars:     {},        // added to flash content as flashvars param/attr
+
     flashVersion:  '7',       // required flash version
     expressInstaller: null,   // src for express installer
 
@@ -217,7 +218,7 @@ function getTypesRegExp() {
         if (types.length) types += ',';
         types += $.fn.media.defaults.players[player].types;
     };
-    return new RegExp('\\.(' + types.replace(/,/ig,'|') + ')$\\b');
+    return new RegExp('\\.(' + types.replace(/,/ig,'|') + ')\\b');
 };
 
 function getGenerator(player) {
